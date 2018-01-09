@@ -1,0 +1,14 @@
+services:
+    # Command to list available exchange builders
+    kryptopus_command_list_exchange_builders:
+        class: "application/command/ListBuildersCommand"
+        arguments:
+            - "@kryptopus_exchange_builder_registry"
+        tags:
+            - { name: "solfege.console.command" }
+
+    # Exchange builder registry
+    kryptopus_exchange_builder_registry:
+        class: "domain/ExchangeBuilderRegistry"
+
+
